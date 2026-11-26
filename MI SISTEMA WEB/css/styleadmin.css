@@ -1,0 +1,119 @@
+/* Formularios y tablas del panel admin */
+.form-admin {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--tinta);
+}
+
+.form-grid input,
+.form-grid select {
+  padding: .6rem .75rem;
+  border: 1px solid var(--linea);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--hueso);
+  color: var(--tinta);
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  outline: 2px solid var(--mostaza);
+  outline-offset: 0;
+  border-color: var(--mostaza);
+}
+
+.form-acciones {
+  display: flex;
+  gap: .75rem;
+  justify-content: flex-end;
+}
+
+.tabla-wrap {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .92rem;
+}
+
+.tabla thead {
+  background: var(--tinta);
+  color: var(--hueso);
+}
+
+.tabla th,
+.tabla td {
+  padding: .75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--linea);
+}
+
+.tabla tbody tr:hover {
+  background: var(--hueso);
+}
+
+.tabla .acciones {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+
+.btn-mini {
+  padding: .35rem .7rem;
+  border: 0;
+  border-radius: 5px;
+  background: var(--tinta);
+  color: var(--blanco);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-mini:hover { filter: brightness(1.15); }
+
+.btn-peligro {
+  background: #c0392b;
+}
+
+.badge {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge.admin {
+  background: var(--mostaza);
+  color: var(--tinta);
+}
+
+.badge.cliente {
+  background: var(--linea);
+  color: var(--tinta);
+}

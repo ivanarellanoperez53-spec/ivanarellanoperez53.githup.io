@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos | Restaurante Ivan</title>
+  <link rel="stylesheet" href="../CSS/styleindex.css">
+  <link rel="stylesheet" href="../CSS/styleadmin.css">
+</head>
+<body>
+
+  <header class="header">
+    <button id="btnMenu" class="header__menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuLateral">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="inicio.html" class="header__logo">RESTAURANTE IVAN</a>
+    <div class="header__usuario">
+      <span id="saludo"></span>
+      <button id="btnSalir" class="btn-linea">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div id="fondo" class="fondo" hidden></div>
+  <nav id="menuLateral" class="nav" aria-label="Menú">
+    <button id="btnCerrar" class="nav__cerrar" aria-label="Cerrar menú">×</button>
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="inicio.html">🏠 Inicio</a></li>
+      <li><a href="productos.html" class="activo">📦 Productos</a></li>
+      <li><a href="clientes.html">👥 Clientes</a></li>
+    </ul>
+  </nav>
+
+  <main class="main" style="max-width:1100px;margin:1.5rem auto;padding:0 1.5rem;width:100%">
+    <div class="catalogo__cabecera">
+      <h2>Gestión de Productos</h2>
+      <button id="btnNuevo" class="btn">+ Nuevo producto</button>
+    </div>
+
+    <!-- Formulario (oculto por defecto) -->
+    <form id="formProducto" class="form-admin" hidden>
+      <input type="hidden" id="prodId">
+      <div class="form-grid">
+        <label>Nombre
+          <input type="text" id="prodNombre" required>
+        </label>
+        <label>Categoría
+          <select id="prodCategoria" required>
+            <option value="entradas">Entradas</option>
+            <option value="sopas">Sopas</option>
+            <option value="principales">Platos Principales</option>
+            <option value="bebidas">Bebidas</option>
+          </select>
+        </label>
+        <label>Precio (Bs)
+          <input type="number" id="prodPrecio" min="0" step="0.5" required>
+        </label>
+        <label>Descripción
+          <input type="text" id="prodDescripcion" required>
+        </label>
+      </div>
+      <div class="form-acciones">
+        <button type="submit" class="btn">Guardar</button>
+        <button type="button" id="btnCancelar" class="btn-linea">Cancelar</button>
+      </div>
+    </form>
+
+    <div class="tabla-wrap">
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>ID</th><th>Nombre</th><th>Categoría</th>
+            <th>Descripción</th><th>Precio</th><th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaProductos"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Restaurante Ivan. Todos los derechos reservados.</p>
+    <p>Panel de administración</p>
+  </footer>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>

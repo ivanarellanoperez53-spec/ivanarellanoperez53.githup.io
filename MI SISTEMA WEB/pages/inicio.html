@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SISTEMA | Restaurante Ivan</title>
+  <link rel="stylesheet" href="../CSS/styleindex.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <button id="btnMenu" class="header__menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuLateral">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="catalogo.html" class="header__logo">RESTAURANTE IVAN</a>
+    <div class="header__usuario">
+      <span id="saludo"></span>
+      <button id="btnSalir" class="btn-linea">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <!-- NAV desplegable a la izquierda -->
+  <div id="fondo" class="fondo" hidden></div>
+  <nav id="menuLateral" class="nav" aria-label="Categorías">
+    <button id="btnCerrar" class="nav__cerrar" aria-label="Cerrar menú">×</button>
+    <h2>Categorías</h2>
+    <ul>
+      <li><a href="#catalogo" data-filtro="todos" class="activo">Todo</a></li>
+      <li><a href="#catalogo" data-filtro="entradas">Entradas</a></li>
+      <li><a href="#catalogo" data-filtro="sopas">Sopas</a></li>
+      <li><a href="#catalogo" data-filtro="principales">Platos Principales</a></li>
+      <li><a href="#catalogo" data-filtro="bebidas">Bebidas</a></li>
+    </ul>
+
+    <div id="zonaAdmin" hidden>
+    <hr style="margin:1rem 0;border:0;border-top:1px solid var(--linea)">
+    <h2>Administración</h2>
+    <ul>
+      <li><a href="productos.html">📦 Productos</a></li>
+      <li><a href="clientes.html">👥 Clientes</a></li>
+    </ul>
+  </div>
+    
+  </nav>
+
+  <div class="layout">
+    <!-- MAIN -->
+    <main class="main">
+      <section class="hero">
+        <h1>Sabores de nuestra Tierra</h1>
+        <p>Sabor que se quedan en el corazon.</p>
+        <!-- <a href="#catalogo" class="btn">Ver catálogo</a> -->
+      </section>
+
+      <section id="catalogo" class="catalogo">
+        <div class="catalogo__cabecera">
+          <h2 id="tituloCategoria">Nuestro Menú</h2>
+          <p id="contador"></p>
+        </div>
+        <div id="productos" class="productos"></div>
+      </section>
+    </main>
+
+    <!-- ASIDE -->
+    <aside class="aside">
+      <section class="caja">
+        <h2>Tu carrito</h2>
+        <ul id="listaCarrito" class="carrito"></ul>
+        <p class="total">Total: <strong id="total">Bs 0</strong></p>
+        <button id="btnVaciar" class="btn-linea">Vaciar carrito</button>
+      </section>
+
+      <section class="caja caja--promo">
+        <h2>Envío gratis</h2>
+        <p>En compras mayores a Bs 200.</p>
+      </section>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Restaurante. Todos los derechos reservados ivan.</p>
+    <p>Atención: lunes a sábado, 12:00 a 14:00</p>
+  </footer>
+
+  <script src="../js/scriptindex.js"></script>
+</body>
+</html>

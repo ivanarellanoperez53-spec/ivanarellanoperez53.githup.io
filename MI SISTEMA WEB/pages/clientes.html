@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clientes | Restaurante Ivan</title>
+  <link rel="stylesheet" href="../CSS/styleindex.css">
+  <link rel="stylesheet" href="../CSS/styleadmin.css">
+</head>
+<body>
+
+  <header class="header">
+    <button id="btnMenu" class="header__menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuLateral">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="inicio.html" class="header__logo">RESTAURANTE IVAN</a>
+    <div class="header__usuario">
+      <span id="saludo"></span>
+      <button id="btnSalir" class="btn-linea">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div id="fondo" class="fondo" hidden></div>
+  <nav id="menuLateral" class="nav" aria-label="Menú">
+    <button id="btnCerrar" class="nav__cerrar" aria-label="Cerrar menú">×</button>
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="inicio.html">🏠 Inicio</a></li>
+      <li><a href="productos.html">📦 Productos</a></li>
+      <li><a href="clientes.html" class="activo">👥 Clientes</a></li>
+    </ul>
+  </nav>
+
+  <main class="main" style="max-width:1100px;margin:1.5rem auto;padding:0 1.5rem;width:100%">
+    <div class="catalogo__cabecera">
+      <h2>Gestión de Clientes</h2>
+      <button id="btnNuevoCliente" class="btn">+ Nuevo cliente</button>
+    </div>
+
+    <form id="formCliente" class="form-admin" hidden>
+      <input type="hidden" id="cliId">
+      <div class="form-grid">
+        <label>Usuario
+          <input type="text" id="cliUsuario" required>
+        </label>
+        <label>Nombre completo
+          <input type="text" id="cliNombre" required>
+        </label>
+        <label>Contraseña
+          <input type="text" id="cliClave" required>
+        </label>
+        <label>Rol
+          <select id="cliRol" required>
+            <option value="cliente">Cliente</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-acciones">
+        <button type="submit" class="btn">Guardar</button>
+        <button type="button" id="btnCancelarCliente" class="btn-linea">Cancelar</button>
+      </div>
+    </form>
+
+    <div class="tabla-wrap">
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>Usuario</th><th>Nombre</th><th>Contraseña</th>
+            <th>Rol</th><th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaClientes"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Restaurante Ivan. Todos los derechos reservados.</p>
+    <p>Panel de administración</p>
+  </footer>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>
